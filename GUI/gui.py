@@ -5,7 +5,6 @@ from matplotlib import cm
 import pylab
 import math
 import streamlit as st
-import time
 import os
 from scipy.stats import spearmanr,kendalltau,pearsonr
 from timer import Timer
