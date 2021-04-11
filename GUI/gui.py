@@ -98,12 +98,12 @@ class CGR():
         pylab.show()
 
 
-def file_selector(folder_path='.'):
+def file_selector(folder_path='./data'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select a file', filenames)
     return os.path.join(folder_path, selected_filename)
 
-def file_selector_1(folder_path='.'):
+def file_selector_1(folder_path='./data'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select comparision file', filenames)
     return os.path.join(folder_path, selected_filename)
