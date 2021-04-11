@@ -7,14 +7,38 @@ import math
 import streamlit as st
 import os
 from scipy.stats import spearmanr,kendalltau,pearsonr
-from timer import Timer
+import time
 import numpy as np
 from matplotlib.backends.backend_agg import RendererAgg
 import os
-os.chdir('../')
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
+class TimerError(Exception):
+     """A custom exception used to report errors in use of Timer class"""
+ 
+class Timer:
+    def __init__(self):
+        self._start_time = None
 
+    def start(self):
+        """Start a new timer"""
+        if self._start_time is not None:
+            raise TimerError(f"Timer is running. Use .stop() to stop it")
+
+        self._start_time = time.perf_counter()
+
+    def stop(self):
+        """Stop the timer, and report the elapsed time"""
+        if self._start_time is None:
+            raise TimerError(f"Timer is not running. Use .start() to start it")
+
+        elapsed_time = time.perf_counter() - self._start_time
+        self._start_time = None
+        return (f"Elapsed time: {elapsed_time:0.4f} seconds")
+
+os.chdir('../')
+print(os.getcwd())
+os.chdir(os.getcwd()+'/data')
 
 class CGR():
     K = 0
@@ -97,13 +121,13 @@ class CGR():
         ax.axes.yaxis.set_visible(False)
         pylab.show()
 
-
-def file_selector(folder_path='./data'):
+path='.'
+def file_selector(folder_path=path):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select a file', filenames)
     return os.path.join(folder_path, selected_filename)
 
-def file_selector_1(folder_path='./data'):
+def file_selector_1(folder_path=path):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select comparision file', filenames)
     return os.path.join(folder_path, selected_filename)
@@ -137,7 +161,6 @@ if __name__ == '__main__':
         with row3_2, _lock:
             t = np.array(cg)
             plt.matshow(t)
-            plt.figure(figsize=(12,12))
             ax = plt.gca()
             ax.axes.xaxis.set_visible(False)
             ax.axes.yaxis.set_visible(False)
