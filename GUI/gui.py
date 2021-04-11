@@ -223,8 +223,7 @@ if __name__ == '__main__':
             if data_1[i]==data_2[i]:
                 sum+=1
         sum/=len(data_1)
-
-        st.sidebar.text("for loop "+str(sum)+"\n")
+        st.sidebar.text("For loop: "+str(sum)[0:5]+"\n")
 
         st.sidebar.text(".")
         st.sidebar.text("Run-Time:")
