@@ -10,7 +10,8 @@ from scipy.stats import spearmanr,kendalltau,pearsonr
 from timer import Timer
 import numpy as np
 from matplotlib.backends.backend_agg import RendererAgg
-
+import os
+os.chdir('../')
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -136,6 +137,7 @@ if __name__ == '__main__':
         with row3_2, _lock:
             t = np.array(cg)
             plt.matshow(t)
+            plt.figure(figsize=(12,12))
             ax = plt.gca()
             ax.axes.xaxis.set_visible(False)
             ax.axes.yaxis.set_visible(False)
