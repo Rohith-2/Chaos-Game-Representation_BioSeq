@@ -1,6 +1,6 @@
 # Chaos-Game-Representation_BioSeq
 ## AIE-19BIO211
-###Intelligence In Biological Systems - 4
+### Intelligence In Biological Systems - 4
 Representation of Bio Sequences via Chaos Game and using the same to find similarities
 
 ### Running the GUI
