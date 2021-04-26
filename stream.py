@@ -149,7 +149,6 @@ if __name__ == '__main__':
         _lock = RendererAgg.lock
         st.title("Chaos Game Representation of Sequences")
         st.write(" ________ ")
-        st.write(os.getcwd())
         K = st.sidebar.slider(
         'Select K Value',
         2, 10, 6
