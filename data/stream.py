@@ -6,12 +6,11 @@ import pylab
 import math
 import pandas as pd
 import streamlit as st
-import os
 from scipy.stats import spearmanr,kendalltau,pearsonr
 import time
 import numpy as np
-from matplotlib.backends.backend_agg import RendererAgg
 import os
+from matplotlib.backends.backend_agg import RendererAgg
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 class TimerError(Exception):
