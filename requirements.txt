@@ -4,3 +4,4 @@ matplotlib
 pylab 
 math
 scipy
+openpyxl
