@@ -12,8 +12,8 @@ import time
 import numpy as np
 from matplotlib.backends.backend_agg import RendererAgg
 import os
-
 st.set_option('deprecation.showPyplotGlobalUse', False)
+
 class TimerError(Exception):
      """A custom exception used to report errors in use of Timer class"""
  
@@ -37,7 +37,7 @@ class Timer:
         self._start_time = None
         return (f"Elapsed time: {elapsed_time:0.4f} seconds")
 
-os.chdir(os.getcwd()+'/data/')
+
 
 class CGR():
     K = 0
