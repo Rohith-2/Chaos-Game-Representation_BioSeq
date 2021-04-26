@@ -1,6 +1,5 @@
 numpy
 streamlit
 matplotlib 
-math
 scipy
 openpyxl
