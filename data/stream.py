@@ -12,7 +12,7 @@ import numpy as np
 import os
 from matplotlib.backends.backend_agg import RendererAgg
 st.set_option('deprecation.showPyplotGlobalUse', False)
-os.chdir(os.getcwd()+'chaos-game-representation_bioseq/data/')
+os.chdir(os.getcwd()+'/chaos-game-representation_bioseq/data/')
 
 class TimerError(Exception):
      """A custom exception used to report errors in use of Timer class"""
