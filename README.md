@@ -10,6 +10,6 @@ Each excel file is a collection of all sequences in the respective family.
 ```
 git clone https://github.com/Rohith-2/Chaos-Game-Representation_BioSeq.git
 pip install -r requirements.txt  
-cd GUI 
+cd Chaos-Game-Representation_BioSeq/GUI/
 streamlit run gui_v2.py 
 ```
