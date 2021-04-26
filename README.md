@@ -17,7 +17,7 @@ a = max(first row of cgr matrix of SEQ_1)
 b = max(second row of cg)
 CG = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg[0],cg[1]))
 a = max(first row of cgr matrix of SEQ_2)
-b = max(first row of cgr matrix of SEQ_2)
+b = max(second row of cgr matrix of SEQ_2)
 CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))
 ```
 

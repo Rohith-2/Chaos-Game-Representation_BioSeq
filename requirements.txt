@@ -1,7 +1,5 @@
 numpy
 streamlit
-matplotlib
-pylab 
-math
+matplotlib 
 scipy
 openpyxl
