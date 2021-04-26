@@ -11,7 +11,6 @@ from scipy.stats import spearmanr,kendalltau,pearsonr
 import time
 import numpy as np
 from matplotlib.backends.backend_agg import RendererAgg
-import os
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 class TimerError(Exception):
@@ -38,7 +37,6 @@ class Timer:
         return (f"Elapsed time: {elapsed_time:0.4f} seconds")
 
 os.chdir('../')
-print(os.getcwd())
 os.chdir(os.getcwd()+'/data/')
 
 class CGR():
