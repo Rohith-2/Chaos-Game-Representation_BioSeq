@@ -11,8 +11,6 @@ import time
 import numpy as np
 import os
 from matplotlib.backends.backend_agg import RendererAgg
-os.chdir('../')
-os.chdir('/data/')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 class TimerError(Exception):
