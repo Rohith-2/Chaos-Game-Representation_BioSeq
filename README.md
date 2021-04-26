@@ -7,6 +7,7 @@ Representation of Bio Sequences via Chaos Game and using the same to find simila
 Each excel file is a collection of all sequences in the respective family. 
 
 ### GUI
+https://share.streamlit.io/rohith-2/chaos-game-representation_bioseq/data/stream.py  
 ![Screenshot 2021-04-26 at 10 36 35 PM](https://user-images.githubusercontent.com/55501708/116122836-e7b13400-a6df-11eb-9791-da68b090e87d.png)
 
 ### Gene-Similarity
