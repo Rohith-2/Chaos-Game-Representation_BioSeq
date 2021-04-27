@@ -1,9 +1,10 @@
+pip
 numpy
 streamlit
 matplotlib 
 scipy
 openpyxl
 scikit-image
-opencv-python
+opencv-contrib-python
 imutils
 skia-python
