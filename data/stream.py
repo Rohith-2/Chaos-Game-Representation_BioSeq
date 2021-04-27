@@ -13,7 +13,7 @@ import os
 from matplotlib.backends.backend_agg import RendererAgg
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-if(os.getcwd()!='/app/chaos-game-representation_bioseq/data/')
+if(os.getcwd()!='/app/chaos-game-representation_bioseq/data/'):
      os.chdir('/app/chaos-game-representation_bioseq/data/')
 
 class TimerError(Exception):
