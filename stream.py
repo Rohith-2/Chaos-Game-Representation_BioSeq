@@ -131,7 +131,6 @@ def file_selector(F):
     def format_func(option):
         return option.split(',')[0]
     selected_filename = st.selectbox('Select a Sequence', acc,format_func=format_func)
-    print(selected_filename)
     x.set_index(0, inplace = True)
     a = x.loc[selected_filename].tolist()
     return a[0],selected_filename
@@ -150,6 +149,7 @@ if __name__ == '__main__':
         _lock = RendererAgg.lock
         st.title("Chaos Game Representation of Sequences")
         st.write(" ________ ")
+          
         K = st.sidebar.slider(
         'Select K Value',
         2, 10, 6
