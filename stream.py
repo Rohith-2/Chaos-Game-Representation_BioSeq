@@ -12,6 +12,8 @@ import numpy as np
 import os
 from matplotlib.backends.backend_agg import RendererAgg
 import cv2
+from skimage.metrics import structural_similarity as ssim
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 l = os.getcwd()
 if(l!='/app/chaos-game-representation_bioseq/data/'):
