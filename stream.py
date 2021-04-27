@@ -249,7 +249,11 @@ if __name__ == '__main__':
             st.sidebar.text('Pearsons correlation: %.3f' % corr)  
     
         st.sidebar.text("SSIM Score:")
-        st.sidebar.text(1-score)
+        ims = 1-score
+        if (ims==0):
+            st.sidebar.text(score)
+        else:
+            st.sidebar.text(ims)
         st.sidebar.text(".")
         st.sidebar.text("Run-Time:")
         st.sidebar.text("CGR - "+t1)
