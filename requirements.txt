@@ -3,4 +3,6 @@ streamlit
 matplotlib 
 scipy
 openpyxl
+scikit-image
 opencv-python
+imutils
