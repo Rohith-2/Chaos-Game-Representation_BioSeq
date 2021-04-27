@@ -3,3 +3,4 @@ streamlit
 matplotlib 
 scipy
 openpyxl
+cv2
