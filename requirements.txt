@@ -6,3 +6,4 @@ openpyxl
 scikit-image
 opencv-python
 imutils
+libgl1-mesa-glx
