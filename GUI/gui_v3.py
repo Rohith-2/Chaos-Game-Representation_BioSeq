@@ -6,15 +6,14 @@ import pylab
 import math
 import pandas as pd
 import streamlit as st
+import os
 from scipy.stats import spearmanr,kendalltau,pearsonr
 import time
 import numpy as np
-import os
 from matplotlib.backends.backend_agg import RendererAgg
+import cv2
+from skimage.metrics import structural_similarity as ssim
 st.set_option('deprecation.showPyplotGlobalUse', False)
-l = os.getcwd()
-if(l!='/app/chaos-game-representation_bioseq/data/'):
-     os.chdir('/app/chaos-game-representation_bioseq/data/')
 
 class TimerError(Exception):
      """A custom exception used to report errors in use of Timer class"""
@@ -38,8 +37,6 @@ class Timer:
         elapsed_time = time.perf_counter() - self._start_time
         self._start_time = None
         return (f"Elapsed time: {elapsed_time:0.4f} seconds")
-
-
 
 class CGR():
     K = 0
@@ -124,11 +121,10 @@ class CGR():
         pylab.figure(figsize=(12,12))
         pylab.title('CGR of '+str(self.K)+'-mers for '+self.h[2:])
         pylab.imshow(self.c, cmap=cm.gray_r)
+        pylab.savefig(str(self.i)+".PNG")
         ax = pylab.gca()
         ax.axes.xaxis.set_visible(False)
         ax.axes.yaxis.set_visible(False)
-        pylab.axis("off")
-        pylab.savefig(str(self.i)+".PNG",bbox_inches='tight', pad_inches=0)
         pylab.show()
 
 
@@ -171,10 +167,9 @@ if __name__ == '__main__':
 
         filenames = os.listdir()
         family = st.selectbox('Select Family', filenames,format_func=format_func)
+  
         filename,h1 = file_selector(family)
-
-        family1 = st.selectbox('Select Comparision Family', filenames,format_func=format_func)
-        filename_1,h2 = file_selector_1(family1)
+        filename_1,h2 = file_selector_1(family)
         
 
         cg,t1 = A.load_fasta(filename,h1)
@@ -217,7 +212,6 @@ if __name__ == '__main__':
         grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
         grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
         (score,_) = ssim(grayA, grayB, full=True)
-    
 
         a = max(cg[0])
         b = max(cg[1])
@@ -244,8 +238,8 @@ if __name__ == '__main__':
             corr, _ = pearsonr(CG,CG_1)
             st.sidebar.text('Pearsons correlation: %.3f' % corr)  
     
-        st.sidebar.text("SSIM Score:")
-        st.sidebar.text(1-score)
+        st.sidebar.text("SSIM Score")
+        st.sidebar.text(score)
         st.sidebar.text(".")
         st.sidebar.text("Run-Time:")
         st.sidebar.text("CGR - "+t1)

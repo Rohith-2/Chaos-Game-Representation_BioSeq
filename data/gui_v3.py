@@ -6,15 +6,16 @@ import pylab
 import math
 import pandas as pd
 import streamlit as st
+import os
 from scipy.stats import spearmanr,kendalltau,pearsonr
 import time
 import numpy as np
-import os
 from matplotlib.backends.backend_agg import RendererAgg
+import cv2
+from skimage.metrics import structural_similarity as ssim
+import tensorflow as tf
 st.set_option('deprecation.showPyplotGlobalUse', False)
-l = os.getcwd()
-if(l!='/app/chaos-game-representation_bioseq/data/'):
-     os.chdir('/app/chaos-game-representation_bioseq/data/')
+plt.axis('off')
 
 class TimerError(Exception):
      """A custom exception used to report errors in use of Timer class"""
@@ -38,8 +39,6 @@ class Timer:
         elapsed_time = time.perf_counter() - self._start_time
         self._start_time = None
         return (f"Elapsed time: {elapsed_time:0.4f} seconds")
-
-
 
 class CGR():
     K = 0
