@@ -17,7 +17,7 @@ CGR Matrix is a 2D matrix => (x,y) which consists of normalised value ranging fr
 The first two rows are considered for similarity measurement:  
 ```Python
 a = max(first row of cgr matrix of SEQ_1)
-b = max(second row of cg)
+b = max(second row of cgr matrix of SEQ_1)
 CG = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg[0],cg[1]))
 a = max(first row of cgr matrix of SEQ_2)
 b = max(second row of cgr matrix of SEQ_2)
