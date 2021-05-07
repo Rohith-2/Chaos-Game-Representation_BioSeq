@@ -166,8 +166,8 @@ if __name__ == '__main__':
         'Select K Value',
         2, 10, 6
         )
-        A = CGR("F")
-        B = CGR("S")
+        A = CGR("F1")
+        B = CGR("S1")
 
         A.param(K,2)
         B.param(K,2)
@@ -217,8 +217,8 @@ if __name__ == '__main__':
             st.pyplot()
         st.write("_________")
 
-        imageA = cv2.imread("F.PNG")
-        imageB = cv2.imread("S.PNG")
+        imageA = cv2.imread("F1.PNG")
+        imageB = cv2.imread("S1.PNG")
         grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
         grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
         (score,_) = ssim(grayA, grayB, full=True)
