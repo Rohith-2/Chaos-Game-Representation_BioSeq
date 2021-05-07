@@ -13,7 +13,6 @@ import numpy as np
 from matplotlib.backends.backend_agg import RendererAgg
 import cv2
 from skimage.metrics import structural_similarity as ssim
-import tensorflow as tf
 st.set_option('deprecation.showPyplotGlobalUse', False)
 plt.axis('off')
 

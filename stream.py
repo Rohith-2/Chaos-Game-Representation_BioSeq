@@ -111,7 +111,8 @@ class CGR():
             maxy = array_size
             posx = 1
             posy = 1
-        return chaos
+        chaos = chaos/np.amax(chaos)
+        return chaos*10
 
     def load_fasta(self,data,head):
         self.Data = data
@@ -128,7 +129,7 @@ class CGR():
     def show(self):
         pylab.figure(figsize=(12,12))
         pylab.title('CGR of '+str(self.K)+'-mers for '+self.h[2:])
-        pylab.imshow(self.c, cmap=cm.gray_r)
+        pylab.imshow(self.c, cmap=cm.gray_r,filterrad=10,vmin=0,vmax=2)
         ax = pylab.gca()
         ax.axes.xaxis.set_visible(False)
         ax.axes.yaxis.set_visible(False)
