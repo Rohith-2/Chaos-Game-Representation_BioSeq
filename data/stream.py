@@ -168,7 +168,7 @@ if __name__ == '__main__':
         st.write(" ________ ")
         K = st.sidebar.slider(
         'Select K Value',
-        4, 50, 15
+        4, 20, 10
         )
         A = CGR("F")
         B = CGR("S")
