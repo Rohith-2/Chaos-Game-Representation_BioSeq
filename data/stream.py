@@ -112,7 +112,7 @@ class CGR():
             posx = 1
             posy = 1
         chaos = chaos/np.amax(chaos) 
-        return chaos
+        return chaos*10
 
     def load_fasta(self,data,head):
         self.Data = data
