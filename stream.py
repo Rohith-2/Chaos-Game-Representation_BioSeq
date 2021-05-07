@@ -112,7 +112,10 @@ class CGR():
             posx = 1
             posy = 1
         chaos = chaos/np.amax(chaos)
-        return chaos
+        if(k>7):
+          return chaos*(k/2)
+        else:
+          return chaos
 
     def load_fasta(self,data,head):
         self.Data = data
@@ -165,7 +168,7 @@ if __name__ == '__main__':
         st.write(" ________ ")
         K = st.sidebar.slider(
         'Select K Value',
-        2, 10, 6
+        2, 20, 10
         )
         A = CGR("F1")
         B = CGR("S1")
