@@ -254,7 +254,8 @@ if __name__ == '__main__':
             st.sidebar.text('Pearsons correlation: %.3f' % corr)  
     
         st.sidebar.text("SSIM Score:")
-        ims = 1-score
+        #ims = 1-score
+        ims = score
         if (ims==0):
             st.sidebar.text(score)
         else:
