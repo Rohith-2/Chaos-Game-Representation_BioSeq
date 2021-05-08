@@ -111,7 +111,7 @@ class CGR():
             maxy = array_size
             posx = 1
             posy = 1
-        chaos = chaos/np.amax(chaos) 
+        #chaos = chaos/np.amax(chaos) 
         if(k>7):
           return chaos*(k/2)
         else:
