@@ -243,8 +243,12 @@ if __name__ == '__main__':
         st.write("_________")
         st.write("About SSIM:")
         st.write("The Structural Similarity Index (SSIM) is a perceptual metric that quantifies image quality degradation* caused by processing such as data compression or by losses in data transmission.")
-
-
+        st.write("_________")
+        st.write("Packages used for SSIM:")
+        st.write("SSIM-PIL : https://pypi.org/project/SSIM-PIL/ & https://scikit-image.org/docs/dev/auto_examples/transform/plot_ssim.html")
+        st.write("Algorithm for correlation:")
+        with st.echo():
+            st.write('Hello')
 
         image1 = Image.open('F.PNG')
         image2 = Image.open('S.PNG')
