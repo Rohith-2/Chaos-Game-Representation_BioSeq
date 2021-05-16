@@ -12,6 +12,7 @@ import numpy as np
 import os
 from matplotlib.backends.backend_agg import RendererAgg
 import cv2
+from math import log10, sqrt
 from skimage.metrics import structural_similarity as ssim
 import matplotlib 
 matplotlib.use("Agg") 
@@ -45,6 +46,14 @@ class Timer:
         return (f"Elapsed time: {elapsed_time:0.4f} seconds")
 
 
+def PSNR(original, compressed):
+    mse = np.mean((original - compressed) ** 2)
+    if(mse == 0):  # MSE is zero means no noise is present in the signal .
+                  # Therefore PSNR have no importance.
+        return 100
+    max_pixel = 255.0
+    psnr = 20 * log10(max_pixel / sqrt(mse))
+    return psnr
 
 class CGR():
     K = 0
@@ -226,6 +235,7 @@ if __name__ == '__main__':
         grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
         grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
         (score,_) = ssim(grayA, grayB, full=True)
+        value = PSNR(grayA, grayB)
     
 
         a = max(cg[0])
@@ -260,6 +270,8 @@ if __name__ == '__main__':
             st.sidebar.text(score)
         else:
             st.sidebar.text(ims)
+        st.sidebar.text(".")
+        st.sidebar.text(f"PSNR value is {value} dB")
         st.sidebar.text(".")
         st.sidebar.text("Run-Time:")
         st.sidebar.text("CGR - "+t1)
