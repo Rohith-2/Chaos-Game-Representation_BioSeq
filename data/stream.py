@@ -287,11 +287,11 @@ if __name__ == '__main__':
             corr, _ = pearsonr(CG,CG_1)
             st.sidebar.text('Pearsons correlation: %.3f' % corr)  
     
-        st.sidebar.text("SSIM Score: "+score)
-        st.sidebar.text("SSIM-PIL value: "+value1)
-        st.sidebar.text("PSNR value: "+value+"dB")
+        st.sidebar.text("SSIM Score: "+str(score))
+        st.sidebar.text("SSIM-PIL value: "+str(value1))
+        st.sidebar.text("PSNR value: "+str(value)+"dB")
         st.sidebar.text("Run-Time:")
-        st.sidebar.text("CGR - "+t1)
+        st.sidebar.text("CGR - "+str(t1))
         st.sidebar.text(".")
         st.sidebar.text("Credits:")
 
