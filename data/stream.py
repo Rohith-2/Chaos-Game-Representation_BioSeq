@@ -248,14 +248,15 @@ if __name__ == '__main__':
         st.write("SSIM-PIL : https://pypi.org/project/SSIM-PIL/ & https://scikit-image.org/docs/dev/auto_examples/transform/plot_ssim.html")
         st.write("_________")
         st.write("Algorithm for correlation:")
-        st.markdown(```python
+        st.markdown('''
+            ```python
             a = max(first row of cgr matrix of SEQ_1)  
             b = max(second row of cgr matrix of SEQ_1)  
             CG = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg[0],cg[1]))  
             a = max(first row of cgr matrix of SEQ_2)  
             b = max(second row of cgr matrix of SEQ_2)  
             CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))   
-            ```)
+            ``` ''')
 
         image1 = Image.open('F.PNG')
         image2 = Image.open('S.PNG')
