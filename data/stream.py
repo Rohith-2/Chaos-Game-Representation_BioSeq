@@ -282,7 +282,7 @@ if __name__ == '__main__':
             st.sidebar.text(score)
         else:
             st.sidebar.text(ims)
-        st.sidebar.text(f"SSIM-PIL value is {value_1}")
+        st.sidebar.text(f"SSIM-PIL value is {value1}")
         st.sidebar.text(".")
         st.sidebar.text(f"PSNR value is {value} dB")
         st.sidebar.text(".")
