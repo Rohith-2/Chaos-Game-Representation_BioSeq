@@ -8,3 +8,4 @@ scikit-image
 opencv-contrib-python-headless
 imutils
 skia-python
+SSIM-PIL
