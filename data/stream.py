@@ -13,6 +13,8 @@ import os
 from matplotlib.backends.backend_agg import RendererAgg
 import cv2
 from math import log10, sqrt
+from SSIM_PIL import compare_ssim
+from PIL import Image
 from skimage.metrics import structural_similarity as ssim
 import matplotlib 
 matplotlib.use("Agg") 
@@ -236,7 +238,17 @@ if __name__ == '__main__':
         grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
         (score,_) = ssim(grayA, grayB, full=True)
         value = PSNR(grayA, grayB)
-    
+        st.write("About PSNR:")
+        st.write("PSNR is most commonly used to estimate the efficiency of compressors, filters, etc. The larger the value of PSNR, the more efficient is a corresponding compression or filter method.")
+        st.write("_________")
+        st.write("About SSIM:")
+        st.write("The Structural Similarity Index (SSIM) is a perceptual metric that quantifies image quality degradation* caused by processing such as data compression or by losses in data transmission.")
+
+
+
+        image1 = Image.open('F.PNG')
+        image2 = Image.open('S.PNG')
+        value1 = compare_ssim(image1, image2)
 
         a = max(cg[0])
         b = max(cg[1])
@@ -270,6 +282,7 @@ if __name__ == '__main__':
             st.sidebar.text(score)
         else:
             st.sidebar.text(ims)
+        st.sidebar.text(f"SSIM-PIL value is {value_1}")
         st.sidebar.text(".")
         st.sidebar.text(f"PSNR value is {value} dB")
         st.sidebar.text(".")
