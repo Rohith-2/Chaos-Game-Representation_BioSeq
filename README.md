@@ -9,7 +9,7 @@ Each excel file is a collection of all sequences in the respective family.
 ### GUI
 https://share.streamlit.io/rohith-2/chaos-game-representation_bioseq/stream.py  
 
-<img width="1327" alt="Screenshot 2021-05-01 at 11 13 17 AM" src="https://user-images.githubusercontent.com/55501708/116772668-483cca00-aa6e-11eb-8727-06e945e1ea9a.png">
+![Screenshot 2021-05-18 at 7 41 30 PM](https://user-images.githubusercontent.com/55501708/118666828-19b24380-b811-11eb-8ad6-ac894089cf01.png)
 
 
 ### Gene-Similarity
