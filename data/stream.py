@@ -262,12 +262,25 @@ if __name__ == '__main__':
         image2 = Image.open('S.PNG')
         value1 = compare_ssim(image1, image2)
 
-        a = if max(cg[0])!= 0: max(cg[0]) else 0.0001
-        b = if max(cg[1])!= 0: max(cg[1]) else 0.0001
+        if max(cg[0])!= 0: 
+            a = max(cg[0]) 
+        else:
+            a = 0.0001
+        if max(cg[1])!= 0:
+            b=max(cg[1])
+        else:
+            b = 0.0001
+
         CG = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg[0],cg[1]))
 
-        a = if max(cg_1[0])!= 0: max(cg_1[0]) else 0.0001
-        b = if max(cg_1[1])!= 0: max(cg_1[1]) else 0.0001
+        if max(cg_1[0])!= 0: 
+            a=max(cg_1[0]) 
+        else:
+            a= 0.0001
+        if max(cg_1[1])!= 0: 
+            b=max(cg_1[1]) 
+        else: 
+            b=0.0001
         CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))
 
         st.sidebar.text("Accuracy:")
