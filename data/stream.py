@@ -279,7 +279,7 @@ if __name__ == '__main__':
             b=0.0001
         CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))
 
-        val_1=np.zeros(cg.shape[1])
+        val_1=np.zeros(np.array(cg).shape[1])
         for i in cg:
             if max(i[0])!= 0: 
                 a = max(i[0]) 
@@ -289,7 +289,7 @@ if __name__ == '__main__':
             val_1 += x
         CG = val_1**0.5
 
-        val_2=np.zeros(cg_1.shape[1])
+        val_2=np.zeros(np.array(cg_1).shape[1])
         for i in cg_1:
             if max(i[0])!= 0: 
                 a = max(i[0]) 
