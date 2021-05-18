@@ -281,8 +281,8 @@ if __name__ == '__main__':
 
         val_1=np.zeros(np.array(cg).shape[1])
         for i in cg:
-            if max(i[0])!= 0: 
-                a = max(i[0]) 
+            if max(i)!= 0: 
+                a = max(i) 
             else:
                 a = 0.0001
             x = i*(1/a)
@@ -291,8 +291,8 @@ if __name__ == '__main__':
 
         val_2=np.zeros(np.array(cg_1).shape[1])
         for i in cg_1:
-            if max(i[0])!= 0: 
-                a = max(i[0]) 
+            if max(i)!= 0: 
+                a = max(i) 
             else:
                 a = 0.0001
             x = i*(1/a)
