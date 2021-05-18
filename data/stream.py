@@ -228,11 +228,15 @@ if __name__ == '__main__':
             st.pyplot()
         st.write("_________")
 
+        t = Timer()
+        t.start()
         imageA = cv2.imread("F.PNG")
         imageB = cv2.imread("S.PNG")
         grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
         grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
         (score,_) = ssim(grayA, grayB, full=True)
+        ssim = t.stop()
+
         value = PSNR(grayA, grayB)
         st.write("About PSNR:")
         st.write("PSNR is most commonly used to estimate the efficiency of compressors, filters, etc. The larger the value of PSNR, the more efficient is a corresponding compression or filter method.")
@@ -254,33 +258,15 @@ if __name__ == '__main__':
             CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))   
             ``` ''')
 
+        t = Timer()
+        t.start()
         image1 = Image.open('F.PNG')
         image2 = Image.open('S.PNG')
         value1 = compare_ssim(image1, image2)
+        pil = t.stop()
 
-        '''
-        if max(cg[0])!= 0: 
-            a = max(cg[0]) 
-        else:
-            a = 0.0001
-        if max(cg[1])!= 0:
-            b=max(cg[1])
-        else:
-            b = 0.0001
-
-        CG = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg[0],cg[1]))
-
-        if max(cg_1[0])!= 0: 
-            a=max(cg_1[0]) 
-        else:
-            a= 0.0001
-        if max(cg_1[1])!= 0: 
-            b=max(cg_1[1]) 
-        else: 
-            b=0.0001
-        CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))
-        '''
-
+        t = Timer()
+        t.start()
         cg = np.array(cg)
         val_1=np.zeros(cg.shape[1])
         for i in cg:
@@ -302,6 +288,7 @@ if __name__ == '__main__':
             x = i*(1/a)
             val_2 += x
         CG_1 = val_2**0.5
+        com = t.stop()
 
         st.sidebar.text("Accuracy:")
         add_selectbox = st.sidebar.selectbox(
@@ -323,8 +310,12 @@ if __name__ == '__main__':
         st.sidebar.text("SSIM Score: "+str(score))
         st.sidebar.text("SSIM-PIL value: "+str(value1))
         st.sidebar.text("PSNR value: "+str(value)+"dB")
+        st.sidebar.text(".")
         st.sidebar.text("Run-Time:")
         st.sidebar.text("CGR - "+str(t1))
+        st.sidebar.text("Correlation - "+str(com))
+        st.sidebar.text("SSIM - "+str(ssim))
+        st.sidebar.text("SSIM-PIL - "+str(pil))
         st.sidebar.text(".")
         st.sidebar.text("Credits:")
 
