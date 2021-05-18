@@ -122,10 +122,6 @@ class CGR():
             maxy = array_size
             posx = 1
             posy = 1
-        #chaos = chaos/np.amax(chaos) 
-        #if(k>7):
-        #  return chaos*(k/2)
-        #else:
         return chaos
 
     def load_fasta(self,data,head):
@@ -282,6 +278,26 @@ if __name__ == '__main__':
         else: 
             b=0.0001
         CG_1 = list(map(lambda x,y:((x*(1/a))+(y*(1/b))*10)**0.5, cg_1[0],cg_1[1]))
+
+        val_1=np.zeros(cg.shape[1])
+        for i in cg:
+            if max(i[0])!= 0: 
+                a = max(i[0]) 
+            else:
+                a = 0.0001
+            x = i*(1/a)
+            val_1 += x
+        CG = val_1**0.5
+
+        val_2=np.zeros(cg_1.shape[1])
+        for i in cg_1:
+            if max(i[0])!= 0: 
+                a = max(i[0]) 
+            else:
+                a = 0.0001
+            x = i*(1/a)
+            val_2 += x
+        CG_1 = val_2**0.5
 
         st.sidebar.text("Accuracy:")
         add_selectbox = st.sidebar.selectbox(
