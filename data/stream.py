@@ -253,20 +253,20 @@ if __name__ == '__main__':
         st.write("Algorithm for correlation:")
         st.markdown('''
             ```python
-         cgr_vec = Empty Vector()
-for i <- cgr matrix of SEQ_1 # i iterates row wise
-  a = max(i)
-  new_row = i/a # Element-Wise Division
-  cgr_vector = cgr_vector + new_row
-  
-cgr_vec_2 = Empty Vector()
-for i <- cgr matrix of SEQ_2 # i iterates row wise
-  a = max(i)
-  new_row = i/a # Element-Wise Division
-  cgr_vector_2 = cgr_vector_2 + new_row
+          cgr_vec = Empty Vector()
+          for i <- cgr matrix of SEQ_1 # i iterates row wise
+            a = max(i)
+            new_row = i/a # Element-Wise Division
+            cgr_vector = cgr_vector + new_row
 
-Correlation(cgr_vec,cgr_vec_2) 
-            ``` ''')
+          cgr_vec_2 = Empty Vector()
+          for i <- cgr matrix of SEQ_2 # i iterates row wise
+            a = max(i)
+            new_row = i/a # Element-Wise Division
+            cgr_vector_2 = cgr_vector_2 + new_row
+
+          Correlation(cgr_vec,cgr_vec_2) ``` 
+            ''')
 
         t = Timer()
         t.start()
