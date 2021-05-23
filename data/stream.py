@@ -20,6 +20,8 @@ import matplotlib
 matplotlib.use("Agg") 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+
+
 l = os.getcwd()
 if(l!='/app/chaos-game-representation_bioseq/data/'):
      os.chdir('/app/chaos-game-representation_bioseq/data/')
@@ -197,6 +199,7 @@ if __name__ == '__main__':
         cg_1,t2 = B.load_fasta(filename_1,h2)
         st.write("_________")
         st.write(A.h)
+
         row3_space1, row3_1, row3_space2, row3_2, row3_space3 = st.beta_columns(
     (.1, 1, .1, 1, .1))
         with row3_1, _lock:
@@ -326,3 +329,6 @@ if __name__ == '__main__':
             .    Ankam Srikanth
             .    Rohith Ramakrishnan
         """)
+        st.write("_________")
+        st.text("Meduim Article:")
+        st.text("https://rrohith2001.medium.com/chaos-game-representation-of-genetic-sequences-e0e6bdcfaf6c")

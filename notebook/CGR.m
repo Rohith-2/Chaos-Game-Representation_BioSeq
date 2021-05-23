@@ -8,16 +8,8 @@ seq = fastaread('seq_1.fasta');
 seq1 = fastaread('seq_2.fasta');
 
 a = cgrDft(seq.Sequence);
-a_m = evenScaleVector(a,dim);
 b = cgrDft(seq1.Sequence);
-b_m = evenScaleVector(b,dim);
-c = cgrDft(seq1.Sequence);
-c_m = evenScaleVector(c,dim);
 
-P = [a_m;b_m];
-
-figure
-plot3(P(:,1),P(:,2),P(:,3),'o')
 
 function [ PSZ ] = cgrDft( seq )
 len = length(seq);
@@ -45,7 +37,7 @@ for j = 1:len
 end
 %[x;y]'
  figure;
- plot(x,y);
+ %plot(x,y);
  scatter(x,y,'.');
  xlim([0,1]);
  ylim([0,1]);
