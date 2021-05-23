@@ -43,3 +43,17 @@ GUI/.DS_Store
 notebook/._CGR.m
 notebook/1.PNG
 notebook/1.PNG
+scripts/._CGR.m
+scripts/._cgrDft
+scripts/cgrDft/._cgrDft.m
+scripts/cgrDft/._evenScaleVector.m
+scripts/cgrDft/._getEDistance.m
+scripts/cgrDft/._HPV.fasta
+scripts/cgrDft/._HRV.fasta
+scripts/cgrDft/._Influenza.fasta
+scripts/cgrDft/._license.txt
+scripts/cgrDft/._Main.m
+scripts/cgrDft/._Mammals.fasta
+scripts/cgrDft/._ReadMe.txt
+scripts/cgrDft/._Running Time.txt
+scripts/cgrDft/._TestCgrDft.m
