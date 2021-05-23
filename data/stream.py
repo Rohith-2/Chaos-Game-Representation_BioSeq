@@ -338,4 +338,4 @@ if __name__ == '__main__':
         """)
         st.write("_________")
         st.text("Meduim Article:")
-        st.text("https://rrohith2001.medium.com/chaos-game-representation-of-genetic-sequences-e0e6bdcfaf6c")
+        st.write("https://rrohith2001.medium.com/chaos-game-representation-of-genetic-sequences-e0e6bdcfaf6c")
