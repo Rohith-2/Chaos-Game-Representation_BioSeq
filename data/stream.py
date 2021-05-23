@@ -265,7 +265,7 @@ if __name__ == '__main__':
             new_row = i/a # Element-Wise Division
             cgr_vector_2 = cgr_vector_2 + new_row
 
-          Correlation(cgr_vec,cgr_vec_2)``` 
+          Correlation(cgr_vec,cgr_vec_2)
             ''')
 
         t = Timer()
