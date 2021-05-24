@@ -1,7 +1,7 @@
-# Chaos-Game-Representation_BioSeq
+# Chaos-Game-Representation_BioSeq  
 
-### Intelligence In Biological Systems - 4
-Representation of Bio Sequences via Chaos Game and using the same to find similarities
+### Representation of Bio Sequences via Chaos Game and using the same to find similarities.   
+__Medium : https://rrohith2001.medium.com/chaos-game-representation-of-genetic-sequences-e0e6bdcfaf6c__  
 <hr style=\"border:0.5px solid gray\"> </hr>  
 
 ### Data    
