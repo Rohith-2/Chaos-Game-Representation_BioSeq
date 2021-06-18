@@ -64,3 +64,6 @@ data/._Adenoviridae.xlsx
 data/._stream.py
 data/view_1.jpg
 data/view_2.jpg
+notebook/BTC_VMD.ipynb
+notebook/._classification.ipynb
+*.xlsx
